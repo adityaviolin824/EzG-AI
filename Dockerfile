@@ -16,7 +16,8 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PORT=7860 \
-    HOME=/home/user
+    HF_HOME=/tmp/huggingface \
+    SENTENCE_TRANSFORMERS_HOME=/tmp/huggingface
 
 # 5. Install Dependencies as ROOT (Ensures --system works)
 COPY requirements.txt .
