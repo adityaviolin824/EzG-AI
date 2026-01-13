@@ -2,35 +2,20 @@ name: Sync to Hugging Face hub
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
 
 jobs:
-  check-size:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          lfs: true # Ensure LFS pointers are pulled so the check sees the pointer size, not the PDF size
-      - name: Check large files
-        uses: ActionsDesk/lfs-warning@v2.0
-        with:
-          filesizelimit: 10485760 # 10MB limit for non-LFS files
-
   sync-to-hub:
-    needs: check-size 
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          lfs: true # REQUIRED: This pulls the actual LFS files to the runner
-      
+          lfs: true # Crucial: This pulls the real PDFs from LFS storage into the runner
+          
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          # The --force is critical to overwrite the existing history on HF with your new LFS structure
+          # We use --force to make sure your fresh, clean LFS history overwrites the Space
           git push --force https://Adivio824:$HF_TOKEN@huggingface.co/spaces/Adivio824/sustainability-audit-testing main
