@@ -1,0 +1,7 @@
+.env
+.venv
+testing/
+__pycache__/
+runs/
+testing/
+reference_documents/

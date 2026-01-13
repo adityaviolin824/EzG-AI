@@ -1,0 +1,4 @@
+[ 2026-01-12 17:52:08,509 ] 22 chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[ 2026-01-12 17:52:08,854 ] 35 vectorstore_visualization.pca_visualization - INFO - Connected to collection: brsr_audit_collection
+[ 2026-01-12 17:52:09,155 ] 134 vectorstore_visualization.pca_visualization - INFO - Narrative vectors in DB: 232
+[ 2026-01-12 17:52:09,157 ] 148 vectorstore_visualization.pca_visualization - INFO - Computing PCA (2D) for 232 vectors...
