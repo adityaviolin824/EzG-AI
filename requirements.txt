@@ -1,5 +1,9 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
+# Core Performance & Stability
 torch==2.5.1+cpu
+pydantic>=2.10.0
+pydantic-settings>=2.4.0
+# Matches your local TOML
 chromadb>=1.1.0
 langchain>=0.3.27
 langchain-chroma>=0.2.6
@@ -16,9 +20,6 @@ python-dotenv>=1.1.1
 requests>=2.32.5
 scikit-learn>=1.5.0
 sentence-transformers>=3.0.0
-setuptools>=70.0.0
-tiktoken>=0.7.0
-tqdm>=4.66.0
 transformers>=4.44.0
 langchain-huggingface>=1.0.0
 langchain-experimental>=0.0.42
@@ -26,7 +27,6 @@ python-box
 ensure
 pyyaml
 pypdf
-pydantic-settings>=2.4.0
 python-magic>=0.4.27
 llmwhisperer-client
 python-docx

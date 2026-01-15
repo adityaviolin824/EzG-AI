@@ -105,6 +105,9 @@ async def start_report_generation(run_id: str, background_tasks: BackgroundTasks
     STAGE 2 & 3: Retrieval, QA, and Formatting
     Triggers the batch questioning of the document and generates the final ESG report.
     """
+    # Prevent duplicate runs
+    if TASK_STATE.get(run_id) == "generating_report":
+        return {"status": "Already in progress", "run_id": run_id}
     run_dir = Path("runs") / run_id
     if not run_dir.exists():
         return {"error": "Run ID not found. Please ingest the document first."}
@@ -139,6 +142,13 @@ async def chat_with_report(run_id: str, payload: Dict):
         ]
     }
     """
+    # Ensure ingestion is actually finished
+    state = TASK_STATE.get(run_id)
+    if state == "ingesting":
+        return {"error": "Document is still being processed. Please wait."}
+    
+    if state not in ["ready", "generating_report", "completed"]:
+         return {"error": "Run not found or ingestion failed."}
 
     run_dir = Path("runs") / run_id
     db_path = run_dir / "chroma_db"
@@ -234,6 +244,13 @@ async def get_vector_visualization(
     """
     Generates a PCA semantic map of the vectorstore for a specific run.
     """
+    # Ensure ingestion is actually finished
+    state = TASK_STATE.get(run_id)
+    if state == "ingesting":
+        return {"error": "Document is still being processed. Please wait."}
+    
+    if state not in ["ready", "generating_report", "completed"]:
+         return {"error": "Run not found or ingestion failed."}
     run_dir = Path("runs") / run_id
     db_path = run_dir / "chroma_db"
 
