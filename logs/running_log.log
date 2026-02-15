@@ -1,537 +1,595 @@
-[ 2026-01-15 16:30:30,398 ] 54 datasets - INFO - PyTorch version 2.9.1 available.
-[ 2026-01-15 16:30:42,696 ] 219 sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
-[ 2026-01-15 16:30:42,697 ] 227 sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L3-v2
-[ 2026-01-15 16:30:45,770 ] 1729 huggingface_hub.file_download - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
-[ 2026-01-15 16:33:03,240 ] 86 vectorstore_ingestion.full_ingestion_pipeline - INFO - --- STARTING PROCESSING: Adani ESG Factbook.pdf ---
-[ 2026-01-15 16:33:03,619 ] 131 vectorstore_ingestion.report_data_extraction - INFO - [Safety Net] Actual pages: 26. Processing up to: 26
-[ 2026-01-15 16:33:03,620 ] 148 vectorstore_ingestion.report_data_extraction - INFO - Dispatching 6 batches to LLMWhisperer...
-[ 2026-01-15 16:33:03,626 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
-[ 2026-01-15 16:33:03,627 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
-[ 2026-01-15 16:33:03,628 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
-[ 2026-01-15 16:33:03,629 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
-[ 2026-01-15 16:33:03,629 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '1-5', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
-[ 2026-01-15 16:33:07,035 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:07,036 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:07,431 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:33:12,433 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:12,433 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:12,808 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:33:17,809 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:17,810 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:18,176 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:33:23,177 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:23,178 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:23,549 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:33:28,550 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:28,551 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:28,932 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:33:33,933 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:33,934 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:34,325 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:33:39,326 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:39,327 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:39,713 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:33:44,714 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:44,715 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:45,078 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:33:50,079 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:50,080 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:50,447 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:33:55,448 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:33:55,449 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:33:55,820 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:34:00,821 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:00,822 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:01,185 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:34:06,185 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:06,186 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:06,593 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:81c4c3c5|0d966c3b317b53f187308d1b1056b09e | STATUS: processed!
-[ 2026-01-15 16:34:06,594 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
-[ 2026-01-15 16:34:06,594 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
-[ 2026-01-15 16:34:08,510 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
-[ 2026-01-15 16:34:08,511 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
-[ 2026-01-15 16:34:08,511 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
-[ 2026-01-15 16:34:08,512 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
-[ 2026-01-15 16:34:08,512 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '6-10', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
-[ 2026-01-15 16:34:11,418 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:11,419 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:11,843 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:97315a01|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:34:16,844 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:16,845 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:17,241 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:97315a01|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:34:22,242 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:22,242 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:22,629 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:97315a01|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:34:27,630 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:27,630 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:28,010 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:97315a01|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:34:33,011 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:33,012 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:33,404 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:97315a01|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:34:38,405 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:38,406 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:38,794 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:97315a01|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:34:43,795 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:43,796 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:44,176 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:97315a01|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:34:49,177 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:49,178 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:49,582 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:97315a01|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:34:54,583 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:54,583 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:34:54,993 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:97315a01|0d966c3b317b53f187308d1b1056b09e | STATUS: processed!
-[ 2026-01-15 16:34:54,994 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
-[ 2026-01-15 16:34:54,994 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
-[ 2026-01-15 16:34:56,890 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
-[ 2026-01-15 16:34:56,891 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
-[ 2026-01-15 16:34:56,891 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
-[ 2026-01-15 16:34:56,892 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
-[ 2026-01-15 16:34:56,893 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '11-15', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
-[ 2026-01-15 16:34:59,833 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:34:59,834 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:00,208 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:c949b989|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:35:05,209 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:05,210 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:05,568 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:c949b989|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:35:10,570 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:10,570 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:10,937 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:c949b989|0d966c3b317b53f187308d1b1056b09e | STATUS: processed!
-[ 2026-01-15 16:35:10,937 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
-[ 2026-01-15 16:35:10,938 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
-[ 2026-01-15 16:35:12,863 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
-[ 2026-01-15 16:35:12,864 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
-[ 2026-01-15 16:35:12,864 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
-[ 2026-01-15 16:35:12,865 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
-[ 2026-01-15 16:35:12,865 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '16-20', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
-[ 2026-01-15 16:35:15,590 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:15,591 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:15,961 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2575189d|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:35:20,962 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:20,963 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:21,355 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2575189d|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:35:26,355 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:26,356 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:26,742 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2575189d|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:35:31,743 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:31,744 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:32,134 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2575189d|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:35:37,136 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:37,136 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:37,516 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2575189d|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:35:42,517 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:42,517 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:42,894 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2575189d|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:35:47,895 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:47,895 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:48,275 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2575189d|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:35:53,276 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:53,276 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:53,683 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2575189d|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:35:58,684 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:35:58,684 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:35:59,062 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2575189d|0d966c3b317b53f187308d1b1056b09e | STATUS: processed!
-[ 2026-01-15 16:35:59,062 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
-[ 2026-01-15 16:35:59,063 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
-[ 2026-01-15 16:36:00,979 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
-[ 2026-01-15 16:36:00,980 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
-[ 2026-01-15 16:36:00,980 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
-[ 2026-01-15 16:36:00,981 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
-[ 2026-01-15 16:36:00,981 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '21-25', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
-[ 2026-01-15 16:36:03,868 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:03,869 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:04,255 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:4ed76990|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:36:09,256 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:09,257 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:09,649 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:4ed76990|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:36:14,651 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:14,652 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:15,054 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:4ed76990|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:36:20,055 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:20,055 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:20,436 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:4ed76990|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:36:25,437 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:25,438 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:25,831 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:4ed76990|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:36:30,832 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:30,833 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:31,215 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:4ed76990|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:36:36,215 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:36,216 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:36,615 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:4ed76990|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:36:41,616 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:41,617 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:41,986 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:4ed76990|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:36:46,986 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:46,987 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:47,389 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:4ed76990|0d966c3b317b53f187308d1b1056b09e | STATUS: processed!
-[ 2026-01-15 16:36:47,389 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
-[ 2026-01-15 16:36:47,390 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
-[ 2026-01-15 16:36:49,323 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
-[ 2026-01-15 16:36:49,324 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
-[ 2026-01-15 16:36:49,325 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
-[ 2026-01-15 16:36:49,325 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
-[ 2026-01-15 16:36:49,325 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '26-26', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
-[ 2026-01-15 16:36:51,831 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:51,832 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:52,212 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:880b56a8|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:36:57,213 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:36:57,213 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:36:57,589 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:880b56a8|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:37:02,590 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:37:02,590 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:37:02,976 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:880b56a8|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:37:07,977 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:37:07,977 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:37:08,351 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:880b56a8|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:37:13,352 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:37:13,353 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:37:13,728 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:880b56a8|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:37:18,730 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:37:18,730 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:37:19,126 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:880b56a8|0d966c3b317b53f187308d1b1056b09e | STATUS: accepted...
-[ 2026-01-15 16:37:24,128 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:37:24,129 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:37:24,514 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:880b56a8|0d966c3b317b53f187308d1b1056b09e | STATUS: processing...
-[ 2026-01-15 16:37:29,514 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
-[ 2026-01-15 16:37:29,515 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
-[ 2026-01-15 16:37:29,914 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:880b56a8|0d966c3b317b53f187308d1b1056b09e | STATUS: processed!
-[ 2026-01-15 16:37:29,914 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
-[ 2026-01-15 16:37:29,915 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
-[ 2026-01-15 16:37:31,858 ] 158 vectorstore_ingestion.report_data_extraction - INFO - Consolidated report saved to runs\Adani ESG Factbook_20260115_163303\formatted_report.txt
-[ 2026-01-15 16:37:31,861 ] 98 vectorstore_ingestion.full_ingestion_pipeline - INFO - Stage 1 complete: Text extracted.
-[ 2026-01-15 16:37:32,089 ] 111 vectorstore_ingestion.full_ingestion_pipeline - INFO - Stage 2 complete: 120 chunks created.
-[ 2026-01-15 16:37:33,930 ] 44 vectorstore_ingestion.full_ingestion_pipeline - INFO - Generating embeddings for 120 chunks in batches of 100...
-[ 2026-01-15 16:37:42,844 ] 58 vectorstore_ingestion.full_ingestion_pipeline - INFO - Processed batch 1/2
-[ 2026-01-15 16:37:43,336 ] 58 vectorstore_ingestion.full_ingestion_pipeline - INFO - Processed batch 2/2
-[ 2026-01-15 16:37:43,833 ] 68 vectorstore_ingestion.full_ingestion_pipeline - INFO - Successfully finalized vectorstore with 120 records at runs\Adani ESG Factbook_20260115_163303\chroma_db.
-[ 2026-01-15 16:37:43,838 ] 122 vectorstore_ingestion.full_ingestion_pipeline - INFO - --- PROCESSING SUCCESSFUL ---
-[ 2026-01-15 16:41:38,965 ] 26 qa_and_report_generation.report_generation_pipeline - INFO - Pipeline initialized for directory: runs\Adani ESG Factbook_20260115_163303
-[ 2026-01-15 16:41:38,966 ] 34 qa_and_report_generation.report_generation_pipeline - INFO - >>> Stage 1: Batch Extraction <<<
-[ 2026-01-15 16:41:38,969 ] 114 root - INFO - Initializing Advanced RAG Retrieval Engine...
-[ 2026-01-15 16:41:39,170 ] 48 retrieval_and_postprocessing.retrieval_functions - INFO - Connected to collection 'brsr_audit_collection' with 120 records.
-[ 2026-01-15 16:41:39,173 ] 38 retrieval_and_postprocessing.retrieval_full_pipeline - INFO - Advanced Engine initialized with YAML configuration.
-[ 2026-01-15 16:41:39,212 ] 126 root - INFO - Loaded 9 batches for processing.
-[ 2026-01-15 16:41:39,213 ] 129 root - INFO - Starting Processing: Batch [governance_policies] with 18 questions.
-[ 2026-01-15 16:41:47,569 ] 142 root - INFO - Retrieved 73 unique context chunks for batch governance_policies.
-[ 2026-01-15 16:41:47,813 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:14:08,622 ] 54 datasets - INFO - PyTorch version 2.9.1 available.
+[ 2026-02-15 18:14:10,240 ] 219 sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+[ 2026-02-15 18:14:10,241 ] 227 sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L3-v2
+[ 2026-02-15 18:16:27,361 ] 86 vectorstore_ingestion.full_ingestion_pipeline - INFO - --- STARTING PROCESSING: Tata-steel-business-responsibility-and-sustainability-report.pdf ---
+[ 2026-02-15 18:16:27,681 ] 131 vectorstore_ingestion.report_data_extraction - INFO - [Safety Net] Actual pages: 80. Processing up to: 80
+[ 2026-02-15 18:16:27,681 ] 148 vectorstore_ingestion.report_data_extraction - INFO - Dispatching 16 batches to LLMWhisperer...
+[ 2026-02-15 18:16:27,691 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:16:27,693 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:16:27,694 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:16:27,694 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:16:27,695 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '1-5', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:16:29,420 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:16:29,420 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:16:29,818 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2d393af6|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:16:34,819 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:16:34,820 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:16:35,196 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:2d393af6|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:16:35,197 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:16:35,197 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:16:37,725 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:16:37,726 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:16:37,726 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:16:37,727 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:16:37,727 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '6-10', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:16:38,925 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:16:38,926 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:16:39,321 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:f7ecec08|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:16:44,322 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:16:44,322 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:16:44,710 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:f7ecec08|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:16:44,711 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:16:44,711 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:16:46,610 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:16:46,611 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:16:46,611 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:16:46,612 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:16:46,613 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '11-15', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:16:47,841 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:16:47,842 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:16:48,223 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:68fd1cbf|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:16:53,224 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:16:53,224 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:16:53,605 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:68fd1cbf|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:16:58,606 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:16:58,607 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:16:59,029 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:68fd1cbf|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:16:59,030 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:16:59,030 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:17:00,946 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:17:00,946 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:17:00,947 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:17:00,947 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:17:00,947 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '16-20', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:17:01,716 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:01,716 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:02,082 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:e9230038|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:17:07,083 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:07,084 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:07,487 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:e9230038|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:17:12,488 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:12,489 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:12,877 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:e9230038|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:17:12,877 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:17:12,878 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:17:14,799 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:17:14,799 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:17:14,800 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:17:14,800 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:17:14,801 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '21-25', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:17:15,367 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:15,368 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:15,756 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:490c9de5|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:17:20,757 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:20,757 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:21,163 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:490c9de5|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:17:21,164 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:17:21,164 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:17:23,065 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:17:23,065 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:17:23,066 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:17:23,066 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:17:23,066 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '26-30', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:17:23,887 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:23,888 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:24,286 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:3d3612ef|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:17:29,287 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:29,288 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:29,682 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:3d3612ef|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:17:34,684 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:34,684 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:35,059 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:3d3612ef|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:17:35,059 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:17:35,060 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:17:36,970 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:17:36,970 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:17:36,971 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:17:36,971 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:17:36,971 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '31-35', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:17:38,163 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:38,164 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:38,534 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:20e6fd28|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:17:43,536 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:43,536 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:43,917 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:20e6fd28|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:17:43,917 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:17:43,918 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:17:45,819 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:17:45,819 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:17:45,820 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:17:45,821 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:17:45,821 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '36-40', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:17:46,488 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:46,489 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:46,927 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:8ee4715c|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:17:51,928 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:51,929 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:52,330 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:8ee4715c|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:17:57,331 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:17:57,332 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:17:57,740 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:8ee4715c|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:17:57,740 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:17:57,741 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:17:59,644 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:17:59,645 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:17:59,646 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:17:59,646 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:17:59,647 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '41-45', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:18:00,211 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:00,212 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:00,588 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:d4198b3e|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:18:05,589 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:05,590 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:05,989 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:d4198b3e|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:18:05,990 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:18:05,990 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:18:07,878 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:18:07,879 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:18:07,880 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:18:07,880 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:18:07,881 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '46-50', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:18:09,297 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:09,298 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:09,673 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:21783fb7|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:18:14,674 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:14,675 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:15,044 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:21783fb7|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:18:15,044 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:18:15,045 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:18:16,950 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:18:16,950 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:18:16,951 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:18:16,951 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:18:16,952 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '51-55', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:18:17,687 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:17,688 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:18,057 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:7266d16f|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:18:23,058 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:23,059 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:23,447 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:7266d16f|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:18:23,448 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:18:23,448 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:18:25,395 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:18:25,396 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:18:25,396 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:18:25,397 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:18:25,397 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '56-60', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:18:26,249 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:26,250 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:26,644 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:23eb557f|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:18:31,644 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:31,645 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:32,059 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:23eb557f|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:18:37,060 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:37,060 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:37,440 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:23eb557f|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:18:37,440 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:18:37,441 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:18:39,328 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:18:39,329 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:18:39,329 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:18:39,329 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:18:39,330 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '61-65', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:18:39,899 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:39,899 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:40,277 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:8e106ca3|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:18:45,278 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:45,279 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:45,649 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:8e106ca3|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:18:50,650 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:50,651 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:51,046 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:8e106ca3|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:18:51,047 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:18:51,047 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:18:52,964 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:18:52,964 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:18:52,965 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:18:52,965 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:18:52,966 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '66-70', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:18:53,440 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:53,441 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:53,819 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:a786a3a9|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:18:58,820 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:18:58,821 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:18:59,189 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:a786a3a9|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:19:04,190 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:19:04,190 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:19:04,573 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:a786a3a9|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:19:04,573 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:19:04,574 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:19:06,473 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:19:06,473 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:19:06,474 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:19:06,474 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:19:06,475 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '71-75', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:19:06,944 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:19:06,945 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:19:07,326 ] 389 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:aa894432|9043b9186babd4495314a6403fae4ca2 | STATUS: accepted...
+[ 2026-02-15 18:19:12,327 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:19:12,328 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:19:12,716 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:aa894432|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:19:17,717 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:19:17,718 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:19:18,099 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:aa894432|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:19:18,100 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:19:18,100 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:19:20,016 ] 127 unstract.llmwhisperer.client_v2 - DEBUG - logging_level set to DEBUG
+[ 2026-02-15 18:19:20,017 ] 132 unstract.llmwhisperer.client_v2 - DEBUG - base_url set to https://llmwhisperer-api.us-central.unstract.com/api/v2
+[ 2026-02-15 18:19:20,017 ] 289 unstract.llmwhisperer.client_v2 - DEBUG - whisper called
+[ 2026-02-15 18:19:20,018 ] 312 unstract.llmwhisperer.client_v2 - DEBUG - api_url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper
+[ 2026-02-15 18:19:20,018 ] 313 unstract.llmwhisperer.client_v2 - DEBUG - params: {'mode': 'high_quality', 'output_mode': 'layout_preserving', 'page_seperator': '<<<', 'pages_to_extract': '76-80', 'median_filter_size': 0, 'gaussian_blur_radius': 0, 'line_splitter_tolerance': 0.4, 'horizontal_stretch_factor': 1.0, 'mark_vertical_lines': False, 'mark_horizontal_lines': False, 'line_spitter_strategy': 'left-priority', 'add_line_nos': False, 'include_line_confidence': False, 'lang': 'eng', 'tag': 'default', 'filename': '', 'webhook_metadata': '', 'use_webhook': ''}
+[ 2026-02-15 18:19:20,690 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:19:20,690 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:19:21,113 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:595b448c|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:19:26,116 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:19:26,116 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:19:26,540 ] 391 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:595b448c|9043b9186babd4495314a6403fae4ca2 | STATUS: processing...
+[ 2026-02-15 18:19:31,541 ] 454 unstract.llmwhisperer.client_v2 - DEBUG - whisper_status called
+[ 2026-02-15 18:19:31,541 ] 457 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-status
+[ 2026-02-15 18:19:31,933 ] 411 unstract.llmwhisperer.client_v2 - DEBUG - Whisper-hash:595b448c|9043b9186babd4495314a6403fae4ca2 | STATUS: processed!
+[ 2026-02-15 18:19:31,934 ] 500 unstract.llmwhisperer.client_v2 - DEBUG - whisper_retrieve called
+[ 2026-02-15 18:19:31,934 ] 503 unstract.llmwhisperer.client_v2 - DEBUG - url: https://llmwhisperer-api.us-central.unstract.com/api/v2/whisper-retrieve
+[ 2026-02-15 18:19:33,891 ] 158 vectorstore_ingestion.report_data_extraction - INFO - Consolidated report saved to runs\Tata-steel-business-responsibility-and-sustainability-report_20260215_181627\formatted_report.txt
+[ 2026-02-15 18:19:33,894 ] 98 vectorstore_ingestion.full_ingestion_pipeline - INFO - Stage 1 complete: Text extracted.
+[ 2026-02-15 18:19:34,562 ] 111 vectorstore_ingestion.full_ingestion_pipeline - INFO - Stage 2 complete: 574 chunks created.
+[ 2026-02-15 18:19:37,058 ] 44 vectorstore_ingestion.full_ingestion_pipeline - INFO - Generating embeddings for 574 chunks in batches of 100...
+[ 2026-02-15 18:19:46,684 ] 58 vectorstore_ingestion.full_ingestion_pipeline - INFO - Processed batch 1/6
+[ 2026-02-15 18:19:50,553 ] 58 vectorstore_ingestion.full_ingestion_pipeline - INFO - Processed batch 2/6
+[ 2026-02-15 18:19:51,623 ] 58 vectorstore_ingestion.full_ingestion_pipeline - INFO - Processed batch 3/6
+[ 2026-02-15 18:19:52,255 ] 58 vectorstore_ingestion.full_ingestion_pipeline - INFO - Processed batch 4/6
+[ 2026-02-15 18:19:53,077 ] 58 vectorstore_ingestion.full_ingestion_pipeline - INFO - Processed batch 5/6
+[ 2026-02-15 18:19:53,596 ] 58 vectorstore_ingestion.full_ingestion_pipeline - INFO - Processed batch 6/6
+[ 2026-02-15 18:19:55,573 ] 68 vectorstore_ingestion.full_ingestion_pipeline - INFO - Successfully finalized vectorstore with 574 records at runs\Tata-steel-business-responsibility-and-sustainability-report_20260215_181627\chroma_db.
+[ 2026-02-15 18:19:55,599 ] 122 vectorstore_ingestion.full_ingestion_pipeline - INFO - --- PROCESSING SUCCESSFUL ---
+[ 2026-02-15 18:21:43,445 ] 35 vectorstore_visualization.pca_visualization - INFO - Connected to collection: brsr_audit_collection
+[ 2026-02-15 18:21:43,789 ] 134 vectorstore_visualization.pca_visualization - INFO - Narrative vectors in DB: 507
+[ 2026-02-15 18:21:43,822 ] 148 vectorstore_visualization.pca_visualization - INFO - Computing PCA (2D) for 250 vectors...
+[ 2026-02-15 18:21:57,861 ] 26 qa_and_report_generation.report_generation_pipeline - INFO - Pipeline initialized for directory: runs\Tata-steel-business-responsibility-and-sustainability-report_20260215_181627
+[ 2026-02-15 18:21:57,862 ] 34 qa_and_report_generation.report_generation_pipeline - INFO - >>> Stage 1: Batch Extraction <<<
+[ 2026-02-15 18:21:57,863 ] 114 root - INFO - Initializing Advanced RAG Retrieval Engine...
+[ 2026-02-15 18:21:58,028 ] 48 retrieval_and_postprocessing.retrieval_functions - INFO - Connected to collection 'brsr_audit_collection' with 574 records.
+[ 2026-02-15 18:21:58,029 ] 38 retrieval_and_postprocessing.retrieval_full_pipeline - INFO - Advanced Engine initialized with YAML configuration.
+[ 2026-02-15 18:21:58,110 ] 126 root - INFO - Loaded 9 batches for processing.
+[ 2026-02-15 18:21:58,111 ] 129 root - INFO - Starting Processing: Batch [governance_policies] with 18 questions.
+[ 2026-02-15 18:22:02,919 ] 142 root - INFO - Retrieved 138 unique context chunks for batch governance_policies.
+[ 2026-02-15 18:22:02,951 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:42:22,100 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:42:22,186 ] 167 root - INFO - Successfully processed and saved batch: governance_policies
-[ 2026-01-15 16:42:22,186 ] 129 root - INFO - Starting Processing: Batch [sourcing_circularity] with 7 questions.
-[ 2026-01-15 16:42:26,316 ] 142 root - INFO - Retrieved 47 unique context chunks for batch sourcing_circularity.
-[ 2026-01-15 16:42:26,319 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:22:31,628 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:22:31,655 ] 167 root - INFO - Successfully processed and saved batch: governance_policies
+[ 2026-02-15 18:22:31,656 ] 129 root - INFO - Starting Processing: Batch [sourcing_circularity] with 7 questions.
+[ 2026-02-15 18:22:33,454 ] 142 root - INFO - Retrieved 61 unique context chunks for batch sourcing_circularity.
+[ 2026-02-15 18:22:33,457 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:42:39,955 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:42:39,964 ] 167 root - INFO - Successfully processed and saved batch: sourcing_circularity
-[ 2026-01-15 16:42:39,964 ] 129 root - INFO - Starting Processing: Batch [environmental_metrics] with 19 questions.
-[ 2026-01-15 16:42:48,971 ] 142 root - INFO - Retrieved 64 unique context chunks for batch environmental_metrics.
-[ 2026-01-15 16:42:48,974 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:22:53,207 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:22:53,216 ] 167 root - INFO - Successfully processed and saved batch: sourcing_circularity
+[ 2026-02-15 18:22:53,216 ] 129 root - INFO - Starting Processing: Batch [environmental_metrics] with 19 questions.
+[ 2026-02-15 18:22:58,049 ] 142 root - INFO - Retrieved 102 unique context chunks for batch environmental_metrics.
+[ 2026-02-15 18:22:58,052 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:43:15,590 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:43:15,606 ] 167 root - INFO - Successfully processed and saved batch: environmental_metrics
-[ 2026-01-15 16:43:15,606 ] 129 root - INFO - Starting Processing: Batch [workforce_diversity] with 11 questions.
-[ 2026-01-15 16:43:19,857 ] 142 root - INFO - Retrieved 39 unique context chunks for batch workforce_diversity.
-[ 2026-01-15 16:43:19,860 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:23:46,958 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:23:46,977 ] 167 root - INFO - Successfully processed and saved batch: environmental_metrics
+[ 2026-02-15 18:23:46,977 ] 129 root - INFO - Starting Processing: Batch [workforce_diversity] with 11 questions.
+[ 2026-02-15 18:23:49,953 ] 142 root - INFO - Retrieved 63 unique context chunks for batch workforce_diversity.
+[ 2026-02-15 18:23:49,960 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:43:33,048 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:43:33,059 ] 167 root - INFO - Successfully processed and saved batch: workforce_diversity
-[ 2026-01-15 16:43:33,059 ] 129 root - INFO - Starting Processing: Batch [employee_wellbeing_safety] with 8 questions.
-[ 2026-01-15 16:43:36,470 ] 142 root - INFO - Retrieved 44 unique context chunks for batch employee_wellbeing_safety.
-[ 2026-01-15 16:43:36,473 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:24:10,310 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:24:10,320 ] 167 root - INFO - Successfully processed and saved batch: workforce_diversity
+[ 2026-02-15 18:24:10,321 ] 129 root - INFO - Starting Processing: Batch [employee_wellbeing_safety] with 8 questions.
+[ 2026-02-15 18:24:12,473 ] 142 root - INFO - Retrieved 67 unique context chunks for batch employee_wellbeing_safety.
+[ 2026-02-15 18:24:12,477 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:43:42,868 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:43:42,874 ] 167 root - INFO - Successfully processed and saved batch: employee_wellbeing_safety
-[ 2026-01-15 16:43:42,875 ] 129 root - INFO - Starting Processing: Batch [human_rights] with 7 questions.
-[ 2026-01-15 16:43:45,600 ] 142 root - INFO - Retrieved 30 unique context chunks for batch human_rights.
-[ 2026-01-15 16:43:45,602 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:24:21,768 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:24:21,783 ] 167 root - INFO - Successfully processed and saved batch: employee_wellbeing_safety
+[ 2026-02-15 18:24:21,784 ] 129 root - INFO - Starting Processing: Batch [human_rights] with 7 questions.
+[ 2026-02-15 18:24:23,357 ] 142 root - INFO - Retrieved 43 unique context chunks for batch human_rights.
+[ 2026-02-15 18:24:23,359 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:43:54,740 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:43:54,748 ] 167 root - INFO - Successfully processed and saved batch: human_rights
-[ 2026-01-15 16:43:54,749 ] 129 root - INFO - Starting Processing: Batch [csr_community] with 5 questions.
-[ 2026-01-15 16:43:56,716 ] 142 root - INFO - Retrieved 42 unique context chunks for batch csr_community.
-[ 2026-01-15 16:43:56,719 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:04,523 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:04,534 ] 167 root - INFO - Successfully processed and saved batch: human_rights
+[ 2026-02-15 18:25:04,535 ] 129 root - INFO - Starting Processing: Batch [csr_community] with 5 questions.
+[ 2026-02-15 18:25:05,842 ] 142 root - INFO - Retrieved 42 unique context chunks for batch csr_community.
+[ 2026-02-15 18:25:05,846 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:44:01,528 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:01,535 ] 167 root - INFO - Successfully processed and saved batch: csr_community
-[ 2026-01-15 16:44:01,536 ] 129 root - INFO - Starting Processing: Batch [stakeholder_engagement] with 4 questions.
-[ 2026-01-15 16:44:03,245 ] 142 root - INFO - Retrieved 37 unique context chunks for batch stakeholder_engagement.
-[ 2026-01-15 16:44:03,249 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:10,753 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:10,761 ] 167 root - INFO - Successfully processed and saved batch: csr_community
+[ 2026-02-15 18:25:10,762 ] 129 root - INFO - Starting Processing: Batch [stakeholder_engagement] with 4 questions.
+[ 2026-02-15 18:25:11,724 ] 142 root - INFO - Retrieved 41 unique context chunks for batch stakeholder_engagement.
+[ 2026-02-15 18:25:11,729 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:44:06,949 ] 35 vectorstore_visualization.pca_visualization - INFO - Connected to collection: brsr_audit_collection
-[ 2026-01-15 16:44:07,090 ] 134 vectorstore_visualization.pca_visualization - INFO - Narrative vectors in DB: 106
-[ 2026-01-15 16:44:07,091 ] 148 vectorstore_visualization.pca_visualization - INFO - Computing PCA (2D) for 106 vectors...
-[ 2026-01-15 16:44:08,883 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:08,896 ] 167 root - INFO - Successfully processed and saved batch: stakeholder_engagement
-[ 2026-01-15 16:44:08,896 ] 129 root - INFO - Starting Processing: Batch [customer_responsibility] with 3 questions.
-[ 2026-01-15 16:44:14,038 ] 142 root - INFO - Retrieved 36 unique context chunks for batch customer_responsibility.
-[ 2026-01-15 16:44:14,046 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:25,049 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:25,061 ] 167 root - INFO - Successfully processed and saved batch: stakeholder_engagement
+[ 2026-02-15 18:25:25,062 ] 129 root - INFO - Starting Processing: Batch [customer_responsibility] with 3 questions.
+[ 2026-02-15 18:25:25,758 ] 142 root - INFO - Retrieved 35 unique context chunks for batch customer_responsibility.
+[ 2026-02-15 18:25:25,761 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:44:18,519 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:18,529 ] 167 root - INFO - Successfully processed and saved batch: customer_responsibility
-[ 2026-01-15 16:44:18,530 ] 44 qa_and_report_generation.report_generation_pipeline - INFO - >>> Stage 2: Post-Processing & Consolidation <<<
-[ 2026-01-15 16:44:18,531 ] 137 qa_and_report_generation.responses_postprocessing - INFO - Step 1: Parsing raw answers from runs\Adani ESG Factbook_20260115_163303\batchwise_answers_only.txt
-[ 2026-01-15 16:44:18,564 ] 58 qa_and_report_generation.responses_postprocessing - INFO - Parsed 82 records from raw text.
-[ 2026-01-15 16:44:18,566 ] 148 qa_and_report_generation.responses_postprocessing - INFO - Step 2: Consolidating records...
-[ 2026-01-15 16:44:18,567 ] 95 qa_and_report_generation.responses_postprocessing - INFO - Starting second-pass consolidation using model: openai/gpt-4.1-nano...
-[ 2026-01-15 16:44:18,570 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:29,370 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:29,380 ] 167 root - INFO - Successfully processed and saved batch: customer_responsibility
+[ 2026-02-15 18:25:29,396 ] 44 qa_and_report_generation.report_generation_pipeline - INFO - >>> Stage 2: Post-Processing & Consolidation <<<
+[ 2026-02-15 18:25:29,420 ] 137 qa_and_report_generation.responses_postprocessing - INFO - Step 1: Parsing raw answers from runs\Tata-steel-business-responsibility-and-sustainability-report_20260215_181627\batchwise_answers_only.txt
+[ 2026-02-15 18:25:29,656 ] 58 qa_and_report_generation.responses_postprocessing - INFO - Parsed 89 records from raw text.
+[ 2026-02-15 18:25:29,662 ] 148 qa_and_report_generation.responses_postprocessing - INFO - Step 2: Consolidating records...
+[ 2026-02-15 18:25:29,663 ] 95 qa_and_report_generation.responses_postprocessing - INFO - Starting second-pass consolidation using model: openai/gpt-4.1-nano...
+[ 2026-02-15 18:25:29,667 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:19,345 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:19,348 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:31,753 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:31,762 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:20,804 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:20,807 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:33,266 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:33,271 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:21,820 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:21,823 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:34,230 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:34,234 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:23,854 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:23,856 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:35,605 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:35,608 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:25,067 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:25,070 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:37,592 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:37,595 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:25,902 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:25,904 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:39,121 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:39,125 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:27,353 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:27,356 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:40,406 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:40,409 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:28,573 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:28,575 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:41,658 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:41,662 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:29,752 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:29,754 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:42,681 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:42,684 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:31,618 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:31,620 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:43,748 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:43,751 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:32,796 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:32,799 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:44,875 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:44,880 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:33,919 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:33,921 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:46,192 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:46,195 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:34,975 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:34,977 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:47,042 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:47,045 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:36,057 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:36,060 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:48,097 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:48,100 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:37,157 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:37,161 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:48,986 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:48,989 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:39,065 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:39,068 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:49,839 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:49,843 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:40,352 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:40,355 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:51,070 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:51,073 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:41,916 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:41,921 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:51,942 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:51,945 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:43,280 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:43,283 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:53,092 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:53,095 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:44,267 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:44,270 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:54,323 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:54,326 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:45,166 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:45,169 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:55,468 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:55,472 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:46,853 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:46,856 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:57,060 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:57,063 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:47,811 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:47,814 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:58,127 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:58,130 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:48,757 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:48,759 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:25:59,001 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:25:59,012 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:49,979 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:49,982 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:00,683 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:00,685 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:50,999 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:51,001 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:01,276 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:01,279 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:52,120 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:52,123 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:01,902 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:01,905 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:53,220 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:53,223 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:02,666 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:02,669 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:54,268 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:54,271 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:03,302 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:03,305 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:55,533 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:55,536 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:03,950 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:03,953 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:56,661 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:56,663 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:04,631 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:04,633 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:57,591 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:57,593 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:05,275 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:05,279 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:44:59,008 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:44:59,011 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:06,005 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:06,008 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:01,366 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:01,368 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:06,612 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:06,616 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:02,168 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:02,171 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:07,442 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:07,446 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:03,062 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:03,065 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:08,089 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:08,094 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:04,254 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:04,257 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:08,783 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:08,787 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:05,204 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:05,207 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:09,354 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:09,358 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:06,715 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:06,718 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:09,971 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:09,974 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:07,905 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:07,907 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:10,634 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:10,637 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:08,785 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:08,788 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:11,342 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:11,345 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:09,812 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:09,815 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:11,931 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:11,934 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:11,111 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:11,113 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:12,625 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:12,630 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:12,462 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:12,465 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:13,281 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:13,284 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:13,947 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:13,950 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:14,008 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:14,011 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:14,749 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:14,752 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:14,801 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:14,805 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:15,416 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:15,419 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:15,528 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:15,531 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:16,330 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:16,333 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:16,472 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:16,476 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:17,184 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:17,186 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:17,873 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:17,877 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:19,983 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:19,986 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:18,909 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:18,912 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:20,823 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:20,825 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:20,111 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:20,115 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:21,608 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:21,611 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:21,013 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:21,017 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:22,422 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:22,425 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:21,645 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:21,648 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:23,165 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:23,168 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:22,291 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:22,294 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:24,113 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:24,116 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:23,606 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:23,611 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:24,922 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:24,924 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:24,564 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:24,568 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:25,801 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:25,804 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:25,707 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:25,725 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:26,816 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:26,819 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:26,811 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:26,815 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:27,967 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:27,969 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:27,771 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:27,774 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:28,897 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:28,902 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:28,983 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:28,986 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:29,677 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:29,679 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:30,454 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:30,457 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:30,425 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:30,428 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:31,634 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:31,637 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:31,216 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:31,218 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:32,764 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:32,768 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:32,349 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:32,352 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:33,935 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:33,939 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:33,469 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:33,472 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:35,056 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:35,060 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:34,707 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:34,710 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:36,504 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:36,511 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:35,810 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:35,813 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:37,635 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:37,639 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:36,737 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:36,740 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:38,720 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:38,723 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:37,803 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:37,806 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:39,868 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:39,872 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:40,132 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:40,134 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:41,002 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:41,005 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:41,223 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:41,226 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:42,134 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:42,137 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:42,287 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:42,289 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:43,365 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:43,370 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:43,144 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:43,148 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:44,605 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:44,609 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:44,027 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:44,030 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:45,881 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:45,883 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:44,892 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:44,895 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:46,881 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:46,884 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:45,625 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:45,627 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:48,303 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:48,307 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:46,359 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:46,362 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:49,684 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:49,700 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:47,055 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:47,058 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:51,230 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:51,233 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:48,279 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:48,282 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:52,558 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:52,563 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:48,995 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:48,997 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:54,341 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:54,344 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:50,109 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:50,112 ] 3476 LiteLLM - INFO - 
+[ 2026-02-15 18:26:55,324 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:55,331 ] 3476 LiteLLM - INFO - 
 LiteLLM completion() model= gpt-4.1-nano; provider = openai
-[ 2026-01-15 16:45:50,825 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:45:50,833 ] 156 qa_and_report_generation.responses_postprocessing - INFO - Step 3: Processed 82 metrics. Final output: runs\Adani ESG Factbook_20260115_163303\consolidated_records.json
-[ 2026-01-15 16:45:50,834 ] 53 qa_and_report_generation.report_generation_pipeline - INFO - >>> Stage 3: Report Formatting <<<
-[ 2026-01-15 16:45:50,835 ] 151 qa_and_report_generation.report_formatting - INFO - Loading consolidated records and question mapping...
-[ 2026-01-15 16:45:51,634 ] 98 qa_and_report_generation.report_formatting - INFO - Word report generated: runs\Adani ESG Factbook_20260115_163303\ESG_Audit_Document.docx
-[ 2026-01-15 16:45:51,725 ] 131 qa_and_report_generation.report_formatting - INFO - Excel report generated: runs\Adani ESG Factbook_20260115_163303\ESG_Disclosures.xlsx
-[ 2026-01-15 16:45:51,725 ] 159 qa_and_report_generation.report_formatting - INFO - >>> Reporting pipeline execution successful <<<
-[ 2026-01-15 16:45:51,725 ] 61 qa_and_report_generation.report_generation_pipeline - INFO - \u2705 Pipeline successful for Adani ESG Factbook_20260115_163303
-[ 2026-01-15 16:48:18,174 ] 48 retrieval_and_postprocessing.retrieval_functions - INFO - Connected to collection 'brsr_audit_collection' with 120 records.
-[ 2026-01-15 16:48:18,175 ] 38 retrieval_and_postprocessing.retrieval_full_pipeline - INFO - Advanced Engine initialized with YAML configuration.
-[ 2026-01-15 16:48:18,178 ] 3476 LiteLLM - INFO - 
-LiteLLM completion() model= gpt-5-nano; provider = openai
-[ 2026-01-15 16:48:26,310 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
-[ 2026-01-15 16:48:26,312 ] 63 retrieval_and_postprocessing.retrieval_full_pipeline - INFO - Query Processed: Which Business Responsibility and Sustainability Report (BRSR) edition and version is currently in scope under National Guidelines for Responsible Business Conduct (NGRBC) alignment?
-[ 2026-01-15 16:48:27,164 ] 3476 LiteLLM - INFO - 
-LiteLLM completion() model= gpt-4.1-mini; provider = openai
-[ 2026-01-15 16:48:28,194 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:56,783 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:56,786 ] 3476 LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4.1-nano; provider = openai
+[ 2026-02-15 18:26:58,368 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:58,381 ] 3476 LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4.1-nano; provider = openai
+[ 2026-02-15 18:26:59,642 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:26:59,645 ] 3476 LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4.1-nano; provider = openai
+[ 2026-02-15 18:27:00,587 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:27:00,591 ] 3476 LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4.1-nano; provider = openai
+[ 2026-02-15 18:27:01,755 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:27:01,759 ] 3476 LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4.1-nano; provider = openai
+[ 2026-02-15 18:27:02,706 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:27:02,712 ] 3476 LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4.1-nano; provider = openai
+[ 2026-02-15 18:27:03,650 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:27:03,652 ] 3476 LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4.1-nano; provider = openai
+[ 2026-02-15 18:27:04,846 ] 1331 LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+[ 2026-02-15 18:27:04,854 ] 156 qa_and_report_generation.responses_postprocessing - INFO - Step 3: Processed 89 metrics. Final output: runs\Tata-steel-business-responsibility-and-sustainability-report_20260215_181627\consolidated_records.json
+[ 2026-02-15 18:27:04,855 ] 53 qa_and_report_generation.report_generation_pipeline - INFO - >>> Stage 3: Report Formatting <<<
+[ 2026-02-15 18:27:04,863 ] 176 qa_and_report_generation.report_formatting - INFO - Loading consolidated records and question mapping...
+[ 2026-02-15 18:27:06,227 ] 123 qa_and_report_generation.report_formatting - INFO - Word report generated: runs\Tata-steel-business-responsibility-and-sustainability-report_20260215_181627\ESG_Audit_Document.docx
+[ 2026-02-15 18:27:06,505 ] 156 qa_and_report_generation.report_formatting - INFO - Excel report generated: runs\Tata-steel-business-responsibility-and-sustainability-report_20260215_181627\ESG_Disclosures.xlsx
+[ 2026-02-15 18:27:06,505 ] 184 qa_and_report_generation.report_formatting - INFO - >>> Reporting pipeline execution successful <<<
+[ 2026-02-15 18:27:06,507 ] 61 qa_and_report_generation.report_generation_pipeline - INFO - \u2705 Pipeline successful for Tata-steel-business-responsibility-and-sustainability-report_20260215_181627

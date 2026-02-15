@@ -10,6 +10,22 @@ from utils.exception import CustomException
 
 logger = logging.getLogger(__name__)
 
+import re
+
+_INVALID_XML_CHARS = re.compile(r"[\x00-\x08\x0B\x0C\x0E-\x1F]")
+
+def safe_text(value) -> str:
+    """
+    Sanitizes text for XML-based formats (DOCX).
+    Removes NULL bytes and illegal control characters.
+    """
+    if value is None:
+        return ""
+    if not isinstance(value, str):
+        value = str(value)
+    return _INVALID_XML_CHARS.sub("", value).strip()
+
+
 # --------------------------------------------------
 # Helpers
 # --------------------------------------------------
@@ -67,7 +83,11 @@ def generate_docx_report(records: List[Dict], questions_map: Dict[str, str], out
             # Question Section
             p_q = doc.add_paragraph()
             p_q.add_run("Question:").bold = True
-            doc.add_paragraph(questions_map.get(metric_id, "Question not found in question bank."))
+            doc.add_paragraph(
+                safe_text(
+                    questions_map.get(metric_id, "Question not found in question bank.")
+                )
+            )
 
             # Summary Section
             p_s = doc.add_paragraph()
@@ -78,12 +98,16 @@ def generate_docx_report(records: List[Dict], questions_map: Dict[str, str], out
             p_f = doc.add_paragraph()
             p_f.add_run("Key Facts:").bold = True
             key_facts = rec.get("key_facts", [])
+
             if key_facts:
                 if isinstance(key_facts, list):
                     for fact in key_facts:
-                        doc.add_paragraph(str(fact), style="List Bullet")
+                        doc.add_paragraph(
+                            safe_text(fact),
+                            style="List Bullet"
+                        )
                 else:
-                    doc.add_paragraph(str(key_facts))
+                    doc.add_paragraph(safe_text(key_facts))
             else:
                 doc.add_paragraph("Not disclosed in the report.")
 
@@ -93,6 +117,7 @@ def generate_docx_report(records: List[Dict], questions_map: Dict[str, str], out
             doc.add_paragraph(safe_text(rec.get("page")))
 
             doc.add_paragraph("-" * 30)
+
 
         doc.save(output_path)
         logger.info(f"Word report generated: {output_path}")
