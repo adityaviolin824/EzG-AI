@@ -11,10 +11,11 @@ pinned: false
 
 ## Deployment
 
-- **Frontend / Final App**: The user-facing app and static frontend are hosted on :contentReference[oaicite:1]{index=1}.  
+- **Frontend / Final App**: The user-facing app and static frontend are hosted on Firebase.  
   Link: https://EzG-AI.web.app/
 
-- **Backend**: Check out the dockerized backend at https://huggingface.co/spaces/Adivio824 on .
+- **Backend**: The dockerized backend and RAG pipeline are deployed on Hugging Face Spaces.  
+  Link: https://huggingface.co/spaces/Adivio824
 
 
 # Technical Specification: ESG Audit AI (MVP)
