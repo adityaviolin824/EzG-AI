@@ -1,5 +1,5 @@
 ---
-title: Sustainability Audit Testing
+title: EzG-AI
 sdk: docker
 emoji: 📊
 colorFrom: green
@@ -8,6 +8,15 @@ sdk_version: "3.13"
 app_port: 7860
 pinned: false
 ---
+
+## Deployment
+
+- **Backend**: The model API and RAG pipeline are deployed on :contentReference[oaicite:0]{index=0} (Docker/Gradio space serving the inference endpoints and background workers).
+- **Frontend / Final App**: The user-facing app and static frontend are hosted on :contentReference[oaicite:1]{index=1}.  
+  Link: (##will add later##)
+
+Note: keep the Spaces endpoint and the Firebase app URL in your CI/CD secrets. Use the Spaces URL for server to server calls and the Firebase URL for end user links.
+
 
 # Technical Specification: ESG Audit AI (MVP)
 
