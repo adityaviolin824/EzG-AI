@@ -12,7 +12,7 @@ pinned: false
 ## Deployment
 
 - **Frontend / Final App**: Hosted on Firebase.  
-  Link: [https://EzG-AI.web.app/](https://EzG-AI.web.app/)
+  Link: [https://EzG-AI.web.app/](https://esg-audit.web.app/)
 
 - **Backend**: Dockerized RAG pipeline on Hugging Face Spaces.  
   Link: [https://huggingface.co/spaces/Adivio824](https://huggingface.co/spaces/Adivio824)
